@@ -1,0 +1,9 @@
+﻿  AirportManager.c
+c:\users\matanelm\source\repos\systemprogrammingintro2\systemprogrammingintro2\airportmanager.c(13): warning C4013: 'printf' undefined; assuming extern returning int
+c:\users\matanelm\source\repos\systemprogrammingintro2\systemprogrammingintro2\airportmanager.c(29): warning C4013: 'malloc' undefined; assuming extern returning int
+c:\users\matanelm\source\repos\systemprogrammingintro2\systemprogrammingintro2\airportmanager.c(34): warning C4013: 'free' undefined; assuming extern returning int
+c:\users\matanelm\source\repos\systemprogrammingintro2\systemprogrammingintro2\airportmanager.c(29): warning C4047: 'initializing': 'Airport *' differs in levels of indirection from 'int'
+c:\users\matanelm\source\repos\systemprogrammingintro2\systemprogrammingintro2\airportmanager.c(38): warning C4047: 'initializing': 'char *' differs in levels of indirection from 'int'
+c:\users\matanelm\source\repos\systemprogrammingintro2\systemprogrammingintro2\airportmanager.c(39): warning C4047: 'initializing': 'char *' differs in levels of indirection from 'int'
+c:\users\matanelm\source\repos\systemprogrammingintro2\systemprogrammingintro2\airportmanager.c(66): warning C4028: formal parameter 1 different from declaration
+  SystemProgrammingIntro2.vcxproj -> C:\Users\MatanelM\source\repos\SystemProgrammingIntro2\Debug\SystemProgrammingIntro2.exe

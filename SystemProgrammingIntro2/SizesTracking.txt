@@ -1,0 +1,61 @@
+V5
+=========================
+Sizes:
+Airpalne is 6 bytes
+Flight is 28 bytes
+Airline is 772 bytes
+AirportManager is 12 bytes
+Date is 4 bytes
+Airport is 8 bytes
+AirplaneType is 4 bytes
+
+=========================
+
+V4
+=========================
+Sizes:
+Airpalne is 6 bytes
+Flight is 2060 bytes
+Airline is 772 bytes
+AirportManager is 12 bytes
+Date is 4 bytes
+Airport is 1024 bytes
+AirplaneType is 4 bytes
+
+=========================
+
+V3
+=========================
+Sizes:
+Airpalne is 12 bytes
+Flight is 2072 bytes
+Airline is 772 bytes
+AirportManager is 131588 bytes
+Date is 4 bytes
+Airport is 1028 bytes
+AirplaneType is 4 bytes
+=========================
+
+V2
+=========================
+Sizes:
+Airpalne is 12 bytes
+Flight is 2072 bytes
+Airline is 772 bytes
+AirportManager is 131588 bytes
+Date is 4 bytes
+Airport is 1028 bytes
+
+=========================
+
+V1 
+=========================
+Sizes:
+Airpalne is 12 bytes
+Flight is 2080 bytes
+Airline is 772 bytes
+AirportManager is 131588 bytes
+Date is 12 bytes
+Airport is 1028 bytes
+
+=========================
