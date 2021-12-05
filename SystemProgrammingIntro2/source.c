@@ -116,10 +116,24 @@ int f_addFlight(AirportManager* pam, Airline* pai)
 
 	char* code = inputWithMessage("Insert the Airplane's code: (4 digits)");
 	if (!code) { free(from); free(to); free(date); printError();  return 0; }
+
 	else if (strnlen(code, 5) != 4) {
 		free(from); free(to); free(date); free(code);
 		printf("Error: code must be in length of 4\n"); return 0;
 	}
+	int isCapital = 1;
+	for (int i = 0; i < 4; i++)
+	{
+		if (code[i]<'A' && code[i]>'Z')
+		{
+			isCapital = 0;
+		}
+	}
+	if (!isCapital) {
+		free(from); free(to); free(date); free(code);
+		printf("Error: code may be capital letters only \n"); return 0;
+	}
+
 	int type;
 	printf("Insert the Airplane type: (1-3)\n1. Passengers\n2. Container\n3. Military\n");
 	scanf_s("%d", &type);

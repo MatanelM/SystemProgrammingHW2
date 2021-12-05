@@ -52,7 +52,15 @@ int doCountFlightsFromName(const Airline *pai, const char name[L_255])
 
 void doPrintFlight(const Flight *pf)
 {
-	printf("Flight with airplane %s\n", (pf->airplane).code);
+	printf("Flight with airplane %s, type ", (pf->airplane).code);
+	switch ((pf->airplane).type)
+	{
+	case PASSENGERS:printf("Passengers"); break;
+	case CONTAINER: printf("Container"); break;
+	case MILITARY: printf("Military"); break;
+	default: break;
+	}
+	printf("\n");
 	printf("From: %s\n", (pf->from).name);
 	printf("To: %s\n", (pf->to).name);
 	printf("On date: %d/%d/%d\n", (pf->date).day, (pf->date).month, (pf->date).year);
