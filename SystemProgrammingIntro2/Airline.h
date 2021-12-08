@@ -14,6 +14,7 @@ typedef struct
 	// add more as required
 }Airline;
 
+Airline* initAirline();
 int addFlight(Airline *pai, Flight *pf);
 void doPrintFlightsWithPlaneCode(const Airline *pai, const char code[L_CODE]);
 void doPrintFlightsWithPlaneType(const Airline *pai, const AirplaneType type);

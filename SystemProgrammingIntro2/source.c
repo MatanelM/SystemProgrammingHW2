@@ -21,14 +21,14 @@ int main(void)
 {
 	int p = 1;
 
-	AirportManager* pam = malloc(sizeof(AirportManager));
-	pam->sizeOfAirports = L_AIRPORTS_INIT;
-	pam->airports = malloc(L_AIRPORTS_INIT*sizeof(Airport));
-	pam->numOfAirports = 0;
+	AirportManager* pam = initAirportManager();
+	if (!pam)
+	{
+		return 1;
+	}
 
-	Airline* pai = malloc(sizeof(Airline));
-	pai->numOfFlights = 0;
-	strcpy(pai->name, AIRLINE_NAME);
+	Airline* pai = initAirline();
+		
 
 	printf("Would you like to add an airport? (1 - Yes)\n");
 	scanf_s("%d", &p);
@@ -207,7 +207,7 @@ int f_addAirport(AirportManager* pam)
 
 	pai->address = address;
 	pai->name = name;
-	if (!addAirport(&pam, pai))
+	if (!addAirport(pam))
 	{
 		printf("Couldn't add Airport\n");
 	}

@@ -1,3 +1,27 @@
 TODO -
-check why flight is 28 bytes
-minimize Airline
+
+Strings - 
+- check for valid input for plane code - only capital letters allowed
+- in address of an airplane input - if there is more than one word in a term, and if there is a word in that term that has even letters, then transform 
+the letter to have first capital second lower and repeat. example: Israel@Tel#AvIv@Ben#GuRiOn@9
+
+
+Memory - 
+- make init functions for:
+	AirportManager V
+	Flight
+	Airport
+	Airplane
+	Date
+	Airline V
+- after init functions are made, can make free for each 
+
+General - 
+- source.c is only main functions, every function that in the switch-case should be in functionsLib
+- check why flight is 28 bytes
+- minimize Airline
+- const pointers on functions that do not change the pointer's value
+
+# notes
+- we might assume a number input is a number. but should verify if it is within the required limits
+

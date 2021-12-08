@@ -3,6 +3,21 @@
 
 const char* airplaneTypes[] = { "Passengers", "Container", "Military" };
 
+Flight* initFlight()
+{
+	// todo
+}
+
+Airplane* initAirplane()
+{
+	// todo
+}
+
+Date* initDate()
+{
+	// todo
+}
+
 int isFlightFromSourceName(const Flight *pf, const char from[])
 {
 	return strcmp(pf->from.name, from) == 0;

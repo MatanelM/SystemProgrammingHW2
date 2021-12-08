@@ -1,50 +1,64 @@
 #define _CRT_SECURE_NO_WARNINGS
 
 #include <string.h>
+#include <stdlib.h>
 #include "Airport.h"
 #include "AirportManager.h"
 
-int addAirport(AirportManager* *pam, const Airport *pai)
+AirportManager* initAirportManager()
 {
-	unsigned char num, size;
-	num = (*pam)->numOfAirports;
+	AirportManager* pam = malloc(sizeof(AirportManager));
+	if (!pam)
+	{
+		printError();
+		return 0;
+	}
+	pam->airports = NULL;
+	pam->numOfAirports = 0;
+}
+
+int addAirport(AirportManager* pam)
+{
+	unsigned char num;
+	num = pam->numOfAirports;
 	if (num == MAX_AIRPORTS)
 	{
 		printf("Error: Airports array reached maximum\n");
 		return 0;
 	}
+	Airport* pai = (Airport *)mallloc(sizeof(Airport));
 
-	if (isAirportExists((*pam), pai))
+	if (isAirportExists(pam, pai))
 	{
 		printf("Airport exists\n");
 		return 0;
 	}
-
-	size = (*pam)->sizeOfAirports;
-	if (num == size)
-	{
-		size *= 2;
-
-		Airport* arr = (*pam)->airports; // array
-		Airport* newArr = malloc(size * sizeof(Airport));
-		for (int i = 0; i < num; i++)
-		{
-			*(newArr + i) = *(arr + i);
-		}
-		free((*pam)->airports);
-		(*pam)->airports = newArr;
-		(*pam)->sizeOfAirports = size;
-	}
-	char* address = malloc(strlen(pai->address), sizeof(char));
-	char* name = malloc(strlen(pai->name), sizeof(char));
-
-	strcpy(address, pai->address);
-	strcpy(name, pai->name);
-
-	(*pam)->airports[num].address = address;
-	(*pam)->airports[num].name = name;
 	
-	(*pam)->numOfAirports = num + 1;
+	if (!pai)
+	{
+		printError();
+		return 0;
+	}
+	if (!initAirport(pai))
+	{
+		printError();
+	}
+	
+	// increase array size. 
+	// if array pointer is null - size is 0, then alllocate array in size 1
+	pam->airports = (Airport **)realloc(pam->airports,
+		(num + 1) * sizeof(Airport*));
+
+	if (!pam->airports)
+	{ 
+		printError();
+		return 0;
+	}
+
+	pam->airports[num] = *pai;
+	pam->numOfAirports++;
+
+	freeAirport(pai);
 	return 1;
 }
 

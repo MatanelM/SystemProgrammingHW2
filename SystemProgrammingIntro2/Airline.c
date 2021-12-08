@@ -3,6 +3,18 @@
 #include "functionsLib.h"
 #include "Airline.h"
 
+Airline* initAirline()
+{
+	Airline* pai = malloc(sizeof(Airline));
+	if (!pai)
+	{
+		printError();
+		return 0;
+	}
+	pai->numOfFlights = 0;
+	strcpy(pai->name, AIRLINE_NAME);
+}
+
 int addFlight(Airline *pai, Flight *pf)
 {
 	int max = pai->numOfFlights;
@@ -52,15 +64,15 @@ int doCountFlightsFromName(const Airline *pai, const char name[L_255])
 
 void doPrintFlight(const Flight *pf)
 {
-	printf("Flight with airplane %s, type ", (pf->airplane).code);
+	printf("Flight with a ");
 	switch ((pf->airplane).type)
 	{
-	case PASSENGERS:printf("Passengers"); break;
-	case CONTAINER: printf("Container"); break;
-	case MILITARY: printf("Military"); break;
+	case PASSENGERS:printf("passengers"); break;
+	case CONTAINER: printf("container"); break;
+	case MILITARY: printf("military"); break;
 	default: break;
 	}
-	printf("\n");
+	printf("airplane ID:%s\n", (pf->airplane).code);
 	printf("From: %s\n", (pf->from).name);
 	printf("To: %s\n", (pf->to).name);
 	printf("On date: %d/%d/%d\n", (pf->date).day, (pf->date).month, (pf->date).year);

@@ -1,25 +1,25 @@
 ﻿  Airline.c
-c:\users\matan\onedrive\מסמכים\github\systemprogramminghw2\systemprogrammingintro2\airline.c(15): warning C4013: 'printf' undefined; assuming extern returning int
-c:\users\matan\onedrive\מסמכים\github\systemprogramminghw2\systemprogrammingintro2\airline.c(77): warning C4013: 'free' undefined; assuming extern returning int
+c:\users\matanelm\onedrive\מסמכים\github\systemprogramminghw2\systemprogrammingintro2\airline.c(15): warning C4013: 'printf' undefined; assuming extern returning int
+c:\users\matanelm\onedrive\מסמכים\github\systemprogramminghw2\systemprogrammingintro2\airline.c(85): warning C4013: 'free' undefined; assuming extern returning int
   Airport.c
-c:\users\matan\onedrive\מסמכים\github\systemprogramminghw2\systemprogrammingintro2\airport.c(14): warning C4013: 'printf' undefined; assuming extern returning int
-c:\users\matan\onedrive\מסמכים\github\systemprogramminghw2\systemprogrammingintro2\airport.c(20): warning C4013: 'free' undefined; assuming extern returning int
+c:\users\matanelm\onedrive\מסמכים\github\systemprogramminghw2\systemprogrammingintro2\airport.c(14): warning C4013: 'printf' undefined; assuming extern returning int
+c:\users\matanelm\onedrive\מסמכים\github\systemprogramminghw2\systemprogrammingintro2\airport.c(20): warning C4013: 'free' undefined; assuming extern returning int
   AirportManager.c
-c:\users\matan\onedrive\מסמכים\github\systemprogramminghw2\systemprogrammingintro2\airportmanager.c(13): warning C4013: 'printf' undefined; assuming extern returning int
-c:\users\matan\onedrive\מסמכים\github\systemprogramminghw2\systemprogrammingintro2\airportmanager.c(29): warning C4013: 'malloc' undefined; assuming extern returning int
-c:\users\matan\onedrive\מסמכים\github\systemprogramminghw2\systemprogrammingintro2\airportmanager.c(34): warning C4013: 'free' undefined; assuming extern returning int
-c:\users\matan\onedrive\מסמכים\github\systemprogramminghw2\systemprogrammingintro2\airportmanager.c(29): warning C4047: 'initializing': 'Airport *' differs in levels of indirection from 'int'
-c:\users\matan\onedrive\מסמכים\github\systemprogramminghw2\systemprogrammingintro2\airportmanager.c(38): warning C4047: 'initializing': 'char *' differs in levels of indirection from 'int'
-c:\users\matan\onedrive\מסמכים\github\systemprogramminghw2\systemprogrammingintro2\airportmanager.c(39): warning C4047: 'initializing': 'char *' differs in levels of indirection from 'int'
-c:\users\matan\onedrive\מסמכים\github\systemprogramminghw2\systemprogrammingintro2\airportmanager.c(66): warning C4028: formal parameter 1 different from declaration
+c:\users\matanelm\onedrive\מסמכים\github\systemprogramminghw2\systemprogrammingintro2\airportmanager.c(19): warning C4013: 'printf' undefined; assuming extern returning int
+c:\users\matanelm\onedrive\מסמכים\github\systemprogramminghw2\systemprogrammingintro2\airportmanager.c(22): warning C4013: 'mallloc' undefined; assuming extern returning int
+c:\users\matanelm\onedrive\מסמכים\github\systemprogramminghw2\systemprogrammingintro2\airportmanager.c(61): warning C4047: 'initializing': 'Airport *' differs in levels of indirection from 'Airport **'
+c:\users\matanelm\onedrive\מסמכים\github\systemprogramminghw2\systemprogrammingintro2\airportmanager.c(71): warning C4028: formal parameter 1 different from declaration
+c:\users\matanelm\onedrive\מסמכים\github\systemprogramminghw2\systemprogrammingintro2\airportmanager.c(76): warning C4047: 'initializing': 'Airport *' differs in levels of indirection from 'Airport **'
   Flight.c
-c:\users\matan\onedrive\מסמכים\github\systemprogramminghw2\systemprogrammingintro2\flight.c(24): warning C4013: 'free' undefined; assuming extern returning int
+c:\users\matanelm\onedrive\מסמכים\github\systemprogramminghw2\systemprogrammingintro2\flight.c(24): warning C4013: 'free' undefined; assuming extern returning int
   functionsLib.c
-c:\users\matan\onedrive\מסמכים\github\systemprogramminghw2\systemprogrammingintro2\functionslib.c(45): warning C4101: 'msg': unreferenced local variable
+c:\users\matanelm\onedrive\מסמכים\github\systemprogramminghw2\systemprogrammingintro2\functionslib.c(45): warning C4101: 'msg': unreferenced local variable
   source.c
-c:\users\matan\onedrive\מסמכים\github\systemprogramminghw2\systemprogrammingintro2\source.c(229): warning C4013: 'doPrintAirport' undefined; assuming extern returning int
-c:\users\matan\onedrive\מסמכים\github\systemprogramminghw2\systemprogrammingintro2\source.c(268): warning C4020: 'strlen': too many actual parameters
+c:\users\matanelm\onedrive\מסמכים\github\systemprogramminghw2\systemprogrammingintro2\source.c(242): warning C4013: 'doPrintAirport' undefined; assuming extern returning int
+c:\users\matanelm\onedrive\מסמכים\github\systemprogramminghw2\systemprogrammingintro2\source.c(241): warning C4047: 'initializing': 'Airport *' differs in levels of indirection from 'Airport **'
+c:\users\matanelm\onedrive\מסמכים\github\systemprogramminghw2\systemprogrammingintro2\source.c(281): warning C4020: 'strlen': too many actual parameters
   Generating Code...
-c:\users\matan\onedrive\מסמכים\github\systemprogramminghw2\systemprogrammingintro2\source.c(334): warning C4716: 'f_calculateSizes': must return a value
-  LINK : C:\Users\matan\OneDrive\מסמכים\GitHub\SystemProgrammingHW2\Debug\SystemProgrammingIntro2.exe not found or not built by the last incremental link; performing full link
-  SystemProgrammingIntro2.vcxproj -> C:\Users\matan\OneDrive\מסמכים\GitHub\SystemProgrammingHW2\Debug\SystemProgrammingIntro2.exe
+c:\users\matanelm\onedrive\מסמכים\github\systemprogramminghw2\systemprogrammingintro2\source.c(347): warning C4716: 'f_calculateSizes': must return a value
+c:\users\matanelm\onedrive\מסמכים\github\systemprogramminghw2\systemprogrammingintro2\airportmanager.c(11): warning C4716: 'initAirport': must return a value
+AirportManager.obj : error LNK2019: unresolved external symbol _mallloc referenced in function _addAirport
+C:\Users\MatanelM\OneDrive\מסמכים\GitHub\SystemProgrammingHW2\Debug\SystemProgrammingIntro2.exe : fatal error LNK1120: 1 unresolved externals

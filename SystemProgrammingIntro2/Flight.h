@@ -27,6 +27,9 @@ typedef struct
 	Date date;
 }Flight;
 
+Flight* initFlight();
+Airplane* initAirplane();
+Date* initDate();
 int isFlightFromSourceName(const Flight *pf, const char from[]);
 int isFlightFromDestName(const Flight *pf, const char to[]);
 int isPlaneCodeInFlight(const Flight *pf, const char code[]);

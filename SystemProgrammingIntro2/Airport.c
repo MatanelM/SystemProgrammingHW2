@@ -1,6 +1,11 @@
 #include <string.h>
 #include "Airport.h"
 
+Airport* initAirport()
+{
+	// todo 
+}
+
 int isSameAirport(const Airport *a1, const Airport *a2)
 {
 	return strcmp(a1->name, a2->name) == 0;
