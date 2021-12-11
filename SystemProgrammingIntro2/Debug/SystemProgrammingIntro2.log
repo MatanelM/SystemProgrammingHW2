@@ -1,20 +1,7 @@
-﻿  Airline.c
-  Airport.c
-  AirportManager.c
-  Flight.c
-c:\users\maaya\documents\github\v1.2\v1.2\systemprogrammingintro2\flight.c(33): warning C4047: '=': 'unsigned char' differs in levels of indirection from 'void *'
-c:\users\maaya\documents\github\v1.2\v1.2\systemprogrammingintro2\flight.c(42): warning C4047: '=': 'unsigned char' differs in levels of indirection from 'void *'
-c:\users\maaya\documents\github\v1.2\v1.2\systemprogrammingintro2\flight.c(43): warning C4047: '=': 'unsigned char' differs in levels of indirection from 'void *'
-c:\users\maaya\documents\github\v1.2\v1.2\systemprogrammingintro2\flight.c(44): warning C4047: '=': 'unsigned short' differs in levels of indirection from 'void *'
-  functionsLib.c
-c:\users\maaya\documents\github\v1.2\v1.2\systemprogrammingintro2\functionslib.c(45): warning C4101: 'msg': unreferenced local variable
+﻿  AirportManager.c
   source.c
-c:\users\maaya\documents\github\v1.2\v1.2\systemprogrammingintro2\source.c(256): warning C4013: 'doPrintAirport' undefined; assuming extern returning int
+c:\users\matanelm\documents\github\systemprogramminghw2\systemprogrammingintro2\source.c(216): warning C4013: 'doPrintAirport' undefined; assuming extern returning int
   Generating Code...
-c:\users\maaya\documents\github\v1.2\v1.2\systemprogrammingintro2\source.c(360): warning C4716: 'f_calculateSizes': must return a value
-c:\users\maaya\documents\github\v1.2\v1.2\systemprogrammingintro2\flight.c(46): warning C4716: 'initDate': must return a value
-c:\users\maaya\documents\github\v1.2\v1.2\systemprogrammingintro2\flight.c(36): warning C4716: 'initAirplane': must return a value
-c:\users\maaya\documents\github\v1.2\v1.2\systemprogrammingintro2\flight.c(27): warning C4715: 'initFlight': not all control paths return a value
-c:\users\maaya\documents\github\v1.2\v1.2\systemprogrammingintro2\airportmanager.c(19): warning C4715: 'initAirportManager': not all control paths return a value
-c:\users\maaya\documents\github\v1.2\v1.2\systemprogrammingintro2\airline.c(19): warning C4715: 'initAirline': not all control paths return a value
-  SystemProgrammingIntro2.vcxproj -> C:\Users\maaya\Documents\GitHub\v1.2\v1.2\Debug\SystemProgrammingIntro2.exe
+c:\users\matanelm\documents\github\systemprogramminghw2\systemprogrammingintro2\source.c(320): warning C4716: 'f_calculateSizes': must return a value
+c:\users\matanelm\documents\github\systemprogramminghw2\systemprogrammingintro2\airportmanager.c(19): warning C4715: 'initAirportManager': not all control paths return a value
+  SystemProgrammingIntro2.vcxproj -> C:\Users\MatanelM\Documents\GitHub\SystemProgrammingHW2\Debug\SystemProgrammingIntro2.exe

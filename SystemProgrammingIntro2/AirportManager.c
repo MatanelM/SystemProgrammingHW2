@@ -18,16 +18,10 @@ AirportManager* initAirportManager()
 	pam->numOfAirports = 0;
 }
 
-int addAirport(AirportManager* pam, Airport* addMe)
+int addAirport(AirportManager* pam, Airport* pai)
 {
 	// assert incoming "objects" aren't null 
-	if (!addMe)
-	{
-		printError();
-		return 0;
-	}
-
-	if (!pam)
+	if (!pai || !pam)
 	{
 		printError();
 		return 0;
@@ -44,7 +38,7 @@ int addAirport(AirportManager* pam, Airport* addMe)
 	// Airport* pai = (Airport *)malloc(sizeof(Airport));
 
 	// check if the airport exists 
-	if (isAirportExists(pam, addMe))
+	if (isAirportExists(pam, pai))
 	{
 		printf("Airport already exists\n");
 		return 0;
@@ -61,10 +55,9 @@ int addAirport(AirportManager* pam, Airport* addMe)
 		return 0;
 	}
 
-	pam->airports[pam->numOfAirports] = *addMe;
+	pam->airports[pam->numOfAirports] = *pai;
 	pam->numOfAirports++;
 
-	freeAirport(addMe);
 	return 1;
 }
 

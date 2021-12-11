@@ -27,7 +27,7 @@ int main(void)
 		return 1;
 	}
 
-	printf("airportMan was Created! num of airports: %d\n", pam->numOfAirports);
+	printf("airport Man was Created! num of airports: %d\n", pam->numOfAirports);
 
 	Airline* pai = initAirline();
 		
@@ -176,47 +176,7 @@ int f_addFlight(AirportManager* pam, Airline* pai)
 
 int f_addAirport(AirportManager* pam)
 {
-	/*
-	char* address = inputAddress(); // mem allocation
 
-	if (!address)
-	{
-		return 0;
-	}
-
-	char* name = inputWithMessage("Insert Airport name please: \n");
-
-	if (!name) {
-		printf("Error: cannot assign memory.");
-		free(address);
-		return 0;
-	}
-
-	if (strlen(name) == 0) {
-		printf("Error: Name cannot be empty.");
-		free(address);
-		free(name);
-		return 0;
-	}
-
-	Airport* pai = malloc(sizeof(Airport));
-	// changed _______ START 
-
-	// Airport* pai = initAirport(name, address);
-
-	// changed _______ END 
-	if (!pai)
-	{
-		printf("Error: cannot assign memory.");
-		free(address);
-		free(name);
-		return 0;
-	}
-
-	pai->address = address;
-	pai->name = name;
-
-	*/
 	Airport* pai = initAirport();
 
 	printf("airportname: %s", pai->name);
@@ -224,7 +184,7 @@ int f_addAirport(AirportManager* pam)
 	{
 		printf("Couldn't add Airport\n");
 	}
-	freeAirport(pai);
+	free(pai);
 	return 1;
 }
 
