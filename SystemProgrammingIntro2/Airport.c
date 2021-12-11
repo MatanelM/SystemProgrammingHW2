@@ -39,7 +39,7 @@ Airport* initAirport()
 	}
 
 	// 3. create airport struct & insert (address, name)
-	Airport* pai = malloc(sizeof(Airport));
+	Airport* pai = (Airport *)malloc(sizeof(Airport));
 
 	if (!pai)
 	{

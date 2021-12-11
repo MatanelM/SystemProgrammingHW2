@@ -8,7 +8,7 @@
 
 AirportManager* initAirportManager()
 {
-	AirportManager* pam = malloc(sizeof(AirportManager));
+	AirportManager* pam = (AirportManager*)malloc(sizeof(AirportManager));
 	if (!pam)
 	{
 		printError();

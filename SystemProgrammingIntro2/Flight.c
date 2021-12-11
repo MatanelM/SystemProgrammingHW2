@@ -9,7 +9,7 @@ const char* airplaneTypes[] = { "Passengers", "Container", "Military" };
 
 Flight* initFlight(AirportManager* pam)
 {
-	Flight* pf = malloc(sizeof(Flight));
+	Flight* pf = (Flight*)malloc(sizeof(Flight));
 	if (pf)
 	{
 		Airport* pFrom = findAirportFromInput(pam, "Insert the Flight's source: ");
@@ -47,7 +47,7 @@ Flight* initFlight(AirportManager* pam)
 
 Airplane* initAirplane()
 {
-	Airplane* ap = malloc(sizeof(Airplane));
+	Airplane* ap = (Airplane *)malloc(sizeof(Airplane));
 
 	if (ap) {
 

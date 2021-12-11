@@ -7,7 +7,7 @@
 
 Airline* initAirline()
 {
-	Airline* pai = malloc(sizeof(Airline));//should be casting before malloc?
+	Airline* pai = (Airline *)malloc(sizeof(Airline));//should be casting before malloc?
 	if (!pai)
 	{
 		printError(); return 0;

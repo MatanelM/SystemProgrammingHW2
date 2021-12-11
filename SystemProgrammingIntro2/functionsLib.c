@@ -19,7 +19,7 @@ void clearBuffer()
 
 char* inputDate()
 {
-	char* date = calloc(L_255, 1);
+	char* date = (char*)calloc(L_255, sizeof(char*));
 	date = inputWithMessage("Insert a Date in dd$$mm%%yyyy format: ");
 	int isValid = isStringDateValid(&date);
 	if (date)
@@ -44,7 +44,7 @@ char* inputAddress()
 {
 	char *pAddress[4];
 
-	char* all = calloc(L_1024, 1);
+	char* all = (char*)calloc(L_1024, sizeof(char*));
 	if (all) 
 	{
 		for (int i = 0; i < 4; i++)
@@ -190,7 +190,7 @@ void strip(char* *theWord) // by copying and pasting
 
 void capitalize(char* *theWord)
 {
-	char* newWord = calloc(strlen(*theWord), 1);
+	char* newWord = (char*)calloc(strlen(*theWord), sizeof(char*));
 	if (!newWord) { printError(); return; }
 	char* word = strtok((char *)(*theWord), " ");
 	char* temp = word;
@@ -242,7 +242,7 @@ void capitalizeWordAlternatively(char* *theWord)
 	}
 	if (numOfWords > 1)
 	{
-		char* newWord = calloc(strlen(*theWord), 1);
+		char* newWord = (char*)calloc(strlen(*theWord), sizeof(char*));
 		if (!newWord) { printError(); return; }
 		char* word = strtok((char *)(*theWord), " ");
 		int sizeOfWord = 0;
@@ -293,13 +293,18 @@ char* inputWithMessage(char* msg)
 
 char* input()
 {
-	char* str = calloc(L_255, 1);
+	char* str = (char *)calloc(L_255, sizeof(char*));
 	if (str != NULL )
 	{
 		if (fgets(str, L_255, stdin))
 		{
 			str[strcspn(str, "\n")] = 0;
-			return str;
+
+			int size = strlen(str);
+			char* newStr = (char *)calloc(size, sizeof(char));
+			strcpy(newStr, str);
+			free(str);
+			return newStr;
 		}
 		*str = '\0';
 	}
