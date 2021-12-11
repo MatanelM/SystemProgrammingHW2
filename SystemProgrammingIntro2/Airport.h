@@ -13,4 +13,5 @@ Airport* initAirport();
 int isSameAirport(const Airport *a1, const Airport *a2);
 int isAirportName(const Airport *a1, const char name[]);
 void freeAirport(Airport* a1);
+Airport* initAirport();
 #endif

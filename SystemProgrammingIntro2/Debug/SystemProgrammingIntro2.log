@@ -1,25 +1,20 @@
 ﻿  Airline.c
-c:\users\matanelm\onedrive\מסמכים\github\systemprogramminghw2\systemprogrammingintro2\airline.c(15): warning C4013: 'printf' undefined; assuming extern returning int
-c:\users\matanelm\onedrive\מסמכים\github\systemprogramminghw2\systemprogrammingintro2\airline.c(85): warning C4013: 'free' undefined; assuming extern returning int
   Airport.c
-c:\users\matanelm\onedrive\מסמכים\github\systemprogramminghw2\systemprogrammingintro2\airport.c(14): warning C4013: 'printf' undefined; assuming extern returning int
-c:\users\matanelm\onedrive\מסמכים\github\systemprogramminghw2\systemprogrammingintro2\airport.c(20): warning C4013: 'free' undefined; assuming extern returning int
   AirportManager.c
-c:\users\matanelm\onedrive\מסמכים\github\systemprogramminghw2\systemprogrammingintro2\airportmanager.c(19): warning C4013: 'printf' undefined; assuming extern returning int
-c:\users\matanelm\onedrive\מסמכים\github\systemprogramminghw2\systemprogrammingintro2\airportmanager.c(22): warning C4013: 'mallloc' undefined; assuming extern returning int
-c:\users\matanelm\onedrive\מסמכים\github\systemprogramminghw2\systemprogrammingintro2\airportmanager.c(61): warning C4047: 'initializing': 'Airport *' differs in levels of indirection from 'Airport **'
-c:\users\matanelm\onedrive\מסמכים\github\systemprogramminghw2\systemprogrammingintro2\airportmanager.c(71): warning C4028: formal parameter 1 different from declaration
-c:\users\matanelm\onedrive\מסמכים\github\systemprogramminghw2\systemprogrammingintro2\airportmanager.c(76): warning C4047: 'initializing': 'Airport *' differs in levels of indirection from 'Airport **'
   Flight.c
-c:\users\matanelm\onedrive\מסמכים\github\systemprogramminghw2\systemprogrammingintro2\flight.c(24): warning C4013: 'free' undefined; assuming extern returning int
+c:\users\maaya\documents\github\v1.2\v1.2\systemprogrammingintro2\flight.c(33): warning C4047: '=': 'unsigned char' differs in levels of indirection from 'void *'
+c:\users\maaya\documents\github\v1.2\v1.2\systemprogrammingintro2\flight.c(42): warning C4047: '=': 'unsigned char' differs in levels of indirection from 'void *'
+c:\users\maaya\documents\github\v1.2\v1.2\systemprogrammingintro2\flight.c(43): warning C4047: '=': 'unsigned char' differs in levels of indirection from 'void *'
+c:\users\maaya\documents\github\v1.2\v1.2\systemprogrammingintro2\flight.c(44): warning C4047: '=': 'unsigned short' differs in levels of indirection from 'void *'
   functionsLib.c
-c:\users\matanelm\onedrive\מסמכים\github\systemprogramminghw2\systemprogrammingintro2\functionslib.c(45): warning C4101: 'msg': unreferenced local variable
+c:\users\maaya\documents\github\v1.2\v1.2\systemprogrammingintro2\functionslib.c(45): warning C4101: 'msg': unreferenced local variable
   source.c
-c:\users\matanelm\onedrive\מסמכים\github\systemprogramminghw2\systemprogrammingintro2\source.c(242): warning C4013: 'doPrintAirport' undefined; assuming extern returning int
-c:\users\matanelm\onedrive\מסמכים\github\systemprogramminghw2\systemprogrammingintro2\source.c(241): warning C4047: 'initializing': 'Airport *' differs in levels of indirection from 'Airport **'
-c:\users\matanelm\onedrive\מסמכים\github\systemprogramminghw2\systemprogrammingintro2\source.c(281): warning C4020: 'strlen': too many actual parameters
+c:\users\maaya\documents\github\v1.2\v1.2\systemprogrammingintro2\source.c(256): warning C4013: 'doPrintAirport' undefined; assuming extern returning int
   Generating Code...
-c:\users\matanelm\onedrive\מסמכים\github\systemprogramminghw2\systemprogrammingintro2\source.c(347): warning C4716: 'f_calculateSizes': must return a value
-c:\users\matanelm\onedrive\מסמכים\github\systemprogramminghw2\systemprogrammingintro2\airportmanager.c(11): warning C4716: 'initAirport': must return a value
-AirportManager.obj : error LNK2019: unresolved external symbol _mallloc referenced in function _addAirport
-C:\Users\MatanelM\OneDrive\מסמכים\GitHub\SystemProgrammingHW2\Debug\SystemProgrammingIntro2.exe : fatal error LNK1120: 1 unresolved externals
+c:\users\maaya\documents\github\v1.2\v1.2\systemprogrammingintro2\source.c(360): warning C4716: 'f_calculateSizes': must return a value
+c:\users\maaya\documents\github\v1.2\v1.2\systemprogrammingintro2\flight.c(46): warning C4716: 'initDate': must return a value
+c:\users\maaya\documents\github\v1.2\v1.2\systemprogrammingintro2\flight.c(36): warning C4716: 'initAirplane': must return a value
+c:\users\maaya\documents\github\v1.2\v1.2\systemprogrammingintro2\flight.c(27): warning C4715: 'initFlight': not all control paths return a value
+c:\users\maaya\documents\github\v1.2\v1.2\systemprogrammingintro2\airportmanager.c(19): warning C4715: 'initAirportManager': not all control paths return a value
+c:\users\maaya\documents\github\v1.2\v1.2\systemprogrammingintro2\airline.c(19): warning C4715: 'initAirline': not all control paths return a value
+  SystemProgrammingIntro2.vcxproj -> C:\Users\maaya\Documents\GitHub\v1.2\v1.2\Debug\SystemProgrammingIntro2.exe

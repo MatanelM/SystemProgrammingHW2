@@ -1,11 +1,14 @@
-
+#define _CRT_SECURE_NO_WARNINGS//**
+#include <stdio.h>//**
+#include <stdlib.h>//**
 #include <string.h>
 #include "functionsLib.h"
 #include "Airline.h"
 
 Airline* initAirline()
 {
-	Airline* pai = malloc(sizeof(Airline));
+	Airline* pai = malloc(sizeof(Airline));//should be casting before malloc?
+	void* hey = (void*)pai;//
 	if (!pai)
 	{
 		printError();
@@ -46,10 +49,30 @@ void doPrintFlightsWithPlaneCode(const Airline *pai, const char code[L_CODE])
 		printf("There are currently no flight planned with the given code.\n");
 	}
 }
-void doPrintFlightsWithPlaneType(const Airline *pai, const AirplaneType type)
+
+/*
+void doPrintFlightsWithPlaneType(const Airline *pai, const AirplaneType type)//****
 {
 
+	if (pai->numOfFlights == 0)
+	{
+		printf("there are no flights yet!\n");
+	}
+	
+	int i;
+	//missing stuff here
+
+	for (i = 0; i < pai->numOfFlights; i++)
+	{
+		if (strcmp(pai[i].name, type) == 0)
+		{
+			doPrintFlight(&pai[i]);
+		}
+	}
+
 }
+
+*/
 int doCountFlightsFromName(const Airline *pai, const char name[L_255])
 {
 	int count = 0;
@@ -94,5 +117,6 @@ void doPrintAirline(const Airline *pai)
 
 void freeAirline(Airline* pai)
 {
+	//free(Flight);???
 	free(pai);
 }

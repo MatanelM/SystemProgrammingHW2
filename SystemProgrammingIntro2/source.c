@@ -27,6 +27,8 @@ int main(void)
 		return 1;
 	}
 
+	printf("airportMan was Created! num of airports: %d\n", pam->numOfAirports);
+
 	Airline* pai = initAirline();
 		
 
@@ -117,7 +119,7 @@ int f_addFlight(AirportManager* pam, Airline* pai)
 	char* code = inputWithMessage("Insert the Airplane's code: (4 digits)");
 	if (!code) { free(from); free(to); free(date); printError();  return 0; }
 
-	else if (strnlen(code, 5) != 4) {
+	else if (strnlen(code, 5) != 4) {//strlen??
 		free(from); free(to); free(date); free(code);
 		printf("Error: code must be in length of 4\n"); return 0;
 	}
@@ -174,6 +176,7 @@ int f_addFlight(AirportManager* pam, Airline* pai)
 
 int f_addAirport(AirportManager* pam)
 {
+	/*
 	char* address = inputAddress(); // mem allocation
 
 	if (!address)
@@ -197,6 +200,11 @@ int f_addAirport(AirportManager* pam)
 	}
 
 	Airport* pai = malloc(sizeof(Airport));
+	// changed _______ START 
+
+	// Airport* pai = initAirport(name, address);
+
+	// changed _______ END 
 	if (!pai)
 	{
 		printf("Error: cannot assign memory.");
@@ -207,7 +215,12 @@ int f_addAirport(AirportManager* pam)
 
 	pai->address = address;
 	pai->name = name;
-	if (!addAirport(pam))
+
+	*/
+	Airport* pai = initAirport();
+
+	printf("airportname: %s", pai->name);
+	if (!addAirport(pam, pai))
 	{
 		printf("Couldn't add Airport\n");
 	}
@@ -271,15 +284,14 @@ int f_printNumberOfFlightFromLocation(Airline* pai)
 	return 1;
 }
 
-int f_printFlightsWithAirplaneCode(Airline* pai)
+int f_printFlightsWithAirplaneCode(Airline* pai)//longer than 25 rows
 {
-
 	char* code = inputWithMessage("Insert an airplane code: (4 digits)");
 	if (!code) {
 		printError();
 		return 0;
 	}
-	if (strlen(code, 5) != 4) {
+	if (strlen(code) != 4) {//used to be "strlen(code, 5) != 4" changed to "strlen(code) != 4"
 		printf("Invalid code");
 		return 0;
 	}

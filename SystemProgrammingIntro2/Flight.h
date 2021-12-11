@@ -8,8 +8,8 @@ typedef enum { PASSENGERS = 0, CONTAINER = 1, MILITARY = 2 } AirplaneType;
 
 typedef struct
 {
-	unsigned char type;
-	char code[L_CODE+1];
+	unsigned char type;//should be enum????
+	char code[L_CODE+1];//capitals only
 }Airplane;
 
 typedef struct

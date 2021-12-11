@@ -14,6 +14,8 @@
 
 #define EMPTY " "
 #define AIRLINE_NAME "SPARSE AIRLINE"
+#define AIRPORT_NAME "NULL AIRLINE"//**?
+#define AIRPORT_ADDRESS "NULL ADDRESS"//**?
 
 void printError();
 

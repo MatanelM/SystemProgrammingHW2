@@ -9,10 +9,10 @@ the letter to have first capital second lower and repeat. example: Israel@Tel#Av
 Memory - 
 - make init functions for:
 	AirportManager V
-	Flight
-	Airport
-	Airplane
-	Date
+	Flight//*
+	Airport//*
+	Airplane//*
+	Date//*
 	Airline V
 - after init functions are made, can make free for each 
 

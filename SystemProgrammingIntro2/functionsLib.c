@@ -42,7 +42,7 @@ char* addressReqs[4] = {"Country", "City", "Street", "Number"};
 
 char* inputAddress()
 {
-	char msg[L_255];
+	char msg[L_255];//?**
 	char *pAddress[4];
 
 	char* all = calloc(L_1024, 1);
@@ -70,9 +70,11 @@ char* inputAddress()
 			
 		}
 		replaceSpaceWithAtSign(&all);
+		printf("this is the address being inserted: %s\n", all);
 		return all;
 	}
 	return NULL;
+	
 }
 
 const int maxDays[L_MONTHS] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
@@ -241,6 +243,7 @@ void replaceSpaceWithAtSign(char* *theWord)
 char* inputWithMessage(char* msg)
 {
 	printf("%s\n", msg);
+	//printf("the name inserted is: %s", input());
 	return input();
 }
 
