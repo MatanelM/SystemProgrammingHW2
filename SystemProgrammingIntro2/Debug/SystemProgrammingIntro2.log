@@ -1,4 +1,5 @@
 ﻿  Airline.c
+<<<<<<< Updated upstream
 c:\users\matan\onedrive\מסמכים\github\systemprogramminghw2\systemprogrammingintro2\airline.c(15): warning C4013: 'printf' undefined; assuming extern returning int
 c:\users\matan\onedrive\מסמכים\github\systemprogramminghw2\systemprogrammingintro2\airline.c(77): warning C4013: 'free' undefined; assuming extern returning int
   Airport.c
@@ -23,3 +24,6 @@ c:\users\matan\onedrive\מסמכים\github\systemprogramminghw2\systemprogrammi
 c:\users\matan\onedrive\מסמכים\github\systemprogramminghw2\systemprogrammingintro2\source.c(334): warning C4716: 'f_calculateSizes': must return a value
   LINK : C:\Users\matan\OneDrive\מסמכים\GitHub\SystemProgrammingHW2\Debug\SystemProgrammingIntro2.exe not found or not built by the last incremental link; performing full link
   SystemProgrammingIntro2.vcxproj -> C:\Users\matan\OneDrive\מסמכים\GitHub\SystemProgrammingHW2\Debug\SystemProgrammingIntro2.exe
+=======
+  SystemProgrammingIntro2.vcxproj -> C:\Users\maaya\Documents\GitHub\v1.2\v1.2\SystemProgrammingIntro2.sln\Debug\SystemProgrammingIntro2.exe
+>>>>>>> Stashed changes

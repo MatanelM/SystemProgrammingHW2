@@ -3,6 +3,44 @@
 #include "functionsLib.h"
 #include "Airline.h"
 
+<<<<<<< Updated upstream
+=======
+Airline* initAirline()
+{
+	int flag = 0;
+	Airline* pai = malloc(sizeof(Airline));//should be casting before malloc?
+	
+	if (!pai)
+	{
+		printError();
+		return 0;
+	}
+	char* name = NULL;
+	do 
+	{
+		char* name = inputWithMessage("Insert Ailine name please: \n");
+		printf("this is the saved name: %s\n", name);
+		if (!name) {
+			printf("Error: cannot assign memory.\n");
+			free(pai);
+			
+		}
+		trim(&name);
+
+		if (strlen(name) == 0) {
+			flag = 1;
+			printf("Error: Name cannot be empty.\n");
+			free(pai);
+		}
+	} while (flag != 0);
+	
+	pai->numOfFlights = 0;
+	pai->name = name;
+
+	return pai;
+}
+
+>>>>>>> Stashed changes
 int addFlight(Airline *pai, Flight *pf)
 {
 	int max = pai->numOfFlights;

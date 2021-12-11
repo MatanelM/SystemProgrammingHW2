@@ -28,15 +28,15 @@ JUN=5, JUL=6, AUG=7, SEP=8, OCT=9, NOV=10, DEC=11, initSize=12} Month;
 
 int isStringDateValid(char* *pd);
 
-int isYearFromCurrent(int year);
+int isYearFromCurrent(const int year);//we dont change anything, only check
 
-int isMonthInCalendar(int month);
+int isMonthInCalendar(const int month);//we dont change anything, only check
 
-int isDayInMonth(int day, Month month);
+int isDayInMonth(const int day, const Month month);//we dont change anything, only check
 
-int isupper(char c);
+int isupper(const char c);//we dont change anything, only check
 
-int islower(char c);
+int islower(const char c);//we dont change anything, only check
 
 int toupper(char c);
 

@@ -94,28 +94,28 @@ int isStringDateValid(char* *pd)
 	return isDayValid && isMonthValid && isYearValid;
 }
 
-int isYearFromCurrent(int year)
+int isYearFromCurrent(const int year)
 {
 	return year >= YEAR;
 }
 
-int isMonthInCalendar(int month)
+int isMonthInCalendar(const int month)
 {
 	return month > 0 && month <= L_MONTHS;
 }
 
-int isDayInMonth(int day, Month month)
+int isDayInMonth(const int day, const Month month)
 {
 	return day > 0 && day <= maxDays[month];
 }
 
 
-int isupper(char c)
+int isupper(const char c)
 {
 	return c >= 'A' && c <= 'Z';
 }
 
-int islower(char c)
+int islower(const char c)
 {
 	return c >= 'a' && c <= 'z';
 }
