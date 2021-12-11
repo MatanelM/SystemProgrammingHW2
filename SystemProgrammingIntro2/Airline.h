@@ -8,8 +8,8 @@
 
 typedef struct
 {
-	char name[L_255];
-	Flight* flights[MAX_FLIGHTS];
+	char* name;
+	Flight** flights;
 	int numOfFlights;
 	// add more as required
 }Airline;

@@ -56,6 +56,8 @@ void replaceSpaceWithHashtag(char* *theWord);
 
 void replaceSpaceWithAtSign(char* *theWord);
 
+void capitalizeWordAlternatively(char* *theWord);
+
 char* inputWithMessage(char* msg);
 
 char* input();

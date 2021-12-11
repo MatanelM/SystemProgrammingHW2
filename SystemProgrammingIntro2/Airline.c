@@ -8,27 +8,62 @@
 Airline* initAirline()
 {
 	Airline* pai = malloc(sizeof(Airline));//should be casting before malloc?
-	void* hey = (void*)pai;//
 	if (!pai)
 	{
-		printError();
-		return 0;
+		printError(); return 0;
 	}
+	char* name = NULL;
+	do
+	{
+		if (name)
+		{
+			free(pai);
+		}
+		name = inputWithMessage("Insert Ailine name please: \n");
+
+		if (!name) {
+			printError(); return NULL;
+		}
+		trim(&name);
+		printf("%s\n", name);
+		if (strlen(name) == 0) {
+			printf("Error: name cannot be empty.\n");
+		}
+	} while (strlen(name) == 0);
+
 	pai->numOfFlights = 0;
-	strcpy(pai->name, AIRLINE_NAME);
+	pai->name = name;
+	pai->flights = NULL;
+	return pai;
 }
 
 int addFlight(Airline *pai, Flight *pf)
 {
-	int max = pai->numOfFlights;
-	if (max < MAX_FLIGHTS)
+	int num = pai->numOfFlights;
+	if (num == MAX_FLIGHTS) 
 	{
-		(pai->flights)[max] = pf;
-		pai->numOfFlights = max + 1;
+		printf("You have reached maximum flights!\n");
 		return 0;
 	}
-	printf("Error: Airline flights has reached to limit.\n");
-	return 0;
+
+	if (!pf)
+	{
+		printError(); return 0;
+	}
+
+	// at first time if null then it is 0
+	pai->flights = (Flight **)realloc(pai->flights,
+		(num + 1) * sizeof(Flight*));
+
+	if (!pai->flights)
+	{
+		printError();
+		return 0;
+	}
+	pai->flights[num] = pf;
+	pai->numOfFlights++;
+	return 1;
+
 }
 void doPrintFlightsWithPlaneCode(const Airline *pai, const char code[L_CODE])
 {
@@ -50,8 +85,8 @@ void doPrintFlightsWithPlaneCode(const Airline *pai, const char code[L_CODE])
 	}
 }
 
-/*
-void doPrintFlightsWithPlaneType(const Airline *pai, const AirplaneType type)//****
+
+void doPrintFlightsWithPlaneType(const Airline *pai, const AirplaneType type)
 {
 
 	if (pai->numOfFlights == 0)
@@ -64,15 +99,17 @@ void doPrintFlightsWithPlaneType(const Airline *pai, const AirplaneType type)//*
 
 	for (i = 0; i < pai->numOfFlights; i++)
 	{
-		if (strcmp(pai[i].name, type) == 0)
+		Flight* pf = (pai->flights)[i];
+		Airplane* ap = &(pf->airplane);
+		if (ap->type == type)
 		{
-			doPrintFlight(&pai[i]);
+			doPrintFlight(pf);
 		}
 	}
 
 }
 
-*/
+
 int doCountFlightsFromName(const Airline *pai, const char name[L_255])
 {
 	int count = 0;
@@ -95,7 +132,7 @@ void doPrintFlight(const Flight *pf)
 	case MILITARY: printf("military"); break;
 	default: break;
 	}
-	printf("airplane ID:%s\n", (pf->airplane).code);
+	printf(" airplane, ID:%s\n", (pf->airplane).code);
 	printf("From: %s\n", (pf->from).name);
 	printf("To: %s\n", (pf->to).name);
 	printf("On date: %d/%d/%d\n", (pf->date).day, (pf->date).month, (pf->date).year);
@@ -117,6 +154,5 @@ void doPrintAirline(const Airline *pai)
 
 void freeAirline(Airline* pai)
 {
-	//free(Flight);???
 	free(pai);
 }

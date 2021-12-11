@@ -42,7 +42,6 @@ char* addressReqs[4] = {"Country", "City", "Street", "Number"};
 
 char* inputAddress()
 {
-	char msg[L_255];//?**
 	char *pAddress[4];
 
 	char* all = calloc(L_1024, 1);
@@ -57,6 +56,7 @@ char* inputAddress()
 				trim(&pAddress[i]);
 				strip(&pAddress[i]);
 				capitalize(&pAddress[i]);
+				capitalizeWordAlternatively(&pAddress[i]);
 				replaceSpaceWithHashtag(&pAddress[i]);
 				strcat(all, pAddress[i]);
 				if (i != 3)
@@ -191,6 +191,7 @@ void strip(char* *theWord) // by copying and pasting
 void capitalize(char* *theWord)
 {
 	char* newWord = calloc(strlen(*theWord), 1);
+	if (!newWord) { printError(); return; }
 	char* word = strtok((char *)(*theWord), " ");
 	char* temp = word;
 	char firstLetter;
@@ -228,6 +229,49 @@ void replaceSpaceWithChar(char* *theWord, const char c)
 	}
 }
 
+// assuming the word is already stripped and trimmed
+void capitalizeWordAlternatively(char* *theWord)
+{
+	int numOfWords = 1;
+	for (unsigned int i = 0; i < strlen((char *)(*theWord)); i++)
+	{
+		if (((char *)(*theWord))[i] == ' ')
+		{
+			numOfWords++;
+		}
+	}
+	if (numOfWords > 1)
+	{
+		char* newWord = calloc(strlen(*theWord), 1);
+		if (!newWord) { printError(); return; }
+		char* word = strtok((char *)(*theWord), " ");
+		int sizeOfWord = 0;
+		while (word != NULL)
+		{
+			sizeOfWord = strlen(word);
+			if (sizeOfWord % 2 == 0)
+			{
+				for (int i = 0; i < sizeOfWord; i++)
+				{
+					if (i % 2 == 0) 
+					{
+						if (islower(word[i]))word[i] = toupper(word[i]);
+					}
+					else
+					{
+						if (isupper(word[i]))word[i] = tolower(word[i]);
+					}
+				}
+			}
+			strcat(newWord, word);
+			word = strtok(NULL, " ");
+			if (word != NULL)
+				strcat(newWord, " ");
+		}
+		strcpy((char *)(*theWord), newWord);
+	}
+}
+
 void replaceSpaceWithHashtag(char* *theWord)
 {
 	char c = '#';
@@ -243,7 +287,6 @@ void replaceSpaceWithAtSign(char* *theWord)
 char* inputWithMessage(char* msg)
 {
 	printf("%s\n", msg);
-	//printf("the name inserted is: %s", input());
 	return input();
 }
 

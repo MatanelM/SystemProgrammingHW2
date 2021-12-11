@@ -128,6 +128,7 @@
     <ClCompile Include="AirportManager.c" />
     <ClCompile Include="Flight.c" />
     <ClCompile Include="functionsLib.c" />
+    <ClCompile Include="menuFunctions.c" />
     <ClCompile Include="source.c" />
   </ItemGroup>
   <ItemGroup>
@@ -136,6 +137,7 @@
     <ClInclude Include="AirportManager.h" />
     <ClInclude Include="Flight.h" />
     <ClInclude Include="functionsLib.h" />
+    <ClInclude Include="menuFunctions.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="SizesTracking.txt" />

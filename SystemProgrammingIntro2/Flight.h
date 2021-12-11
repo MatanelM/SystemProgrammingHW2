@@ -1,6 +1,7 @@
 #ifndef __FLIGHT__
 #define __FLIGHT__
 
+#include "AirportManager.h"
 #include "Airport.h"
 #include "functionsLib.h"
 
@@ -27,7 +28,7 @@ typedef struct
 	Date date;
 }Flight;
 
-Flight* initFlight();
+Flight* initFlight(AirportManager* pam);
 Airplane* initAirplane();
 Date* initDate();
 int isFlightFromSourceName(const Flight *pf, const char from[]);
@@ -37,6 +38,10 @@ int isPlaneTypeInFlight(const  Flight *pf, const  AirplaneType type);
 void doPrintFlight(const Flight *pf);
 void freeFlight (Flight* pf);
 void freeAirplane(Airplane* a1);
+void freeDate(Date* pd);
+int inputAirplaneType();
+char* inputAirplaneCode();
+
 // add more here for flight
 
 #endif

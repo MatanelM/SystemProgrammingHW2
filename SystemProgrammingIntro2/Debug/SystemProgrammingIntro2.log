@@ -1,7 +1,2 @@
-﻿  AirportManager.c
-  source.c
-c:\users\matanelm\documents\github\systemprogramminghw2\systemprogrammingintro2\source.c(216): warning C4013: 'doPrintAirport' undefined; assuming extern returning int
-  Generating Code...
-c:\users\matanelm\documents\github\systemprogramminghw2\systemprogrammingintro2\source.c(320): warning C4716: 'f_calculateSizes': must return a value
-c:\users\matanelm\documents\github\systemprogramminghw2\systemprogrammingintro2\airportmanager.c(19): warning C4715: 'initAirportManager': not all control paths return a value
+﻿  Airline.c
   SystemProgrammingIntro2.vcxproj -> C:\Users\MatanelM\Documents\GitHub\SystemProgrammingHW2\Debug\SystemProgrammingIntro2.exe

@@ -14,7 +14,9 @@ AirportManager* initAirportManager();
 int isAirportExists(const AirportManager *pam, const Airport *pai);
 int addAirport(AirportManager* pam, Airport* addMe);
 Airport* findAirportByName(const AirportManager *pam, const char name[]);
+Airport* findAirportFromInput(const AirportManager *pam, const char* message);
 void freeAirportManager(AirportManager* pam);
+
 // add more as required
 
 #endif
