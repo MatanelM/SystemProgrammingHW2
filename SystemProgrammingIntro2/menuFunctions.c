@@ -11,15 +11,15 @@ int f_addFlight(AirportManager* pam, Airline* pai)
 {
 
 	Flight* pf = initFlight(pam);
+	
 	if (pf)
 	{
 		addFlight(pai, pf);
 		printf("\nFlight Details: \n");
 		doPrintFlight((pai->flights)[(pai->numOfFlights) - 1]);
-		printf("has been added successfully.");
+		printf("has been added successfully.\n");
 		return 1;
 	}
-	printError();
 	return 0;
 
 }
@@ -38,7 +38,6 @@ int f_addAirport(AirportManager* pam)
 		free(pai);
 		return 1;
 	}
-	printError();
 	return 0;
 }
 
@@ -100,15 +99,12 @@ int f_printNumberOfFlightFromLocation(Airline* pai)
 
 int f_printFlightsWithAirplaneCode(Airline* pai)//longer than 25 rows
 {
-	char* code = inputWithMessage("Insert an airplane code: (4 digits)");
-	if (!code) {
-		printError();
+
+	char* code = inputAirplaneCode();
+
+	if (!code)
 		return 0;
-	}
-	if (strlen(code) != 4) {//used to be "strlen(code, 5) != 4" changed to "strlen(code) != 4"
-		printf("Invalid code");
-		return 0;
-	}
+
 	int count = 0;
 	int max = pai->numOfFlights;
 	for (int i = 0; i < max; i++)
@@ -152,7 +148,7 @@ int f_printFlightsWithAirplaneType(Airline* pai)
 		}
 	}
 
-	if (count == 0) { printf("\nThere are no flight with such type"); }
+	if (count == 0) { printf("\nThere are no flight with such type\n"); }
 	else { printf("Total: %d flights.\n", count); }
 
 	return 1;
@@ -170,5 +166,5 @@ int f_calculateSizes(void)
 	printf("Airport is %d bytes\n", sizeof(Airport));
 	printf("AirplaneType is %d bytes\n", sizeof(AirplaneType));
 	printf("\n=========================\n");
-
+	return 1;
 }

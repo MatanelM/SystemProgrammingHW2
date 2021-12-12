@@ -19,13 +19,12 @@ Airline* initAirline()
 		{
 			free(pai);
 		}
-		name = inputWithMessage("Insert Ailine name please: \n");
+		name = inputWithMessage("Insert Ailrine name please: \n");
 
 		if (!name) {
 			printError(); return NULL;
 		}
 		trim(&name);
-		printf("%s\n", name);
 		if (strlen(name) == 0) {
 			printf("Error: name cannot be empty.\n");
 		}

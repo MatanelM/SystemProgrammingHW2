@@ -34,7 +34,7 @@ Airport* initAirport()
 		free(address);return NULL;
 	}
 	if (strlen(name) == 0) {
-		printf("Error: Name cannot be empty.");
+		printf("Error: Name cannot be empty.\n");
 		free(address);free(name);return NULL;
 	}
 
@@ -49,7 +49,6 @@ Airport* initAirport()
 
 	pai->address = address;
 	pai->name = name;
-	printf("airportName is: %s", pai->name);
 	return pai;
 }
 

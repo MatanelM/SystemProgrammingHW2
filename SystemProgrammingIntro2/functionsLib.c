@@ -43,7 +43,6 @@ char* addressReqs[4] = {"Country", "City", "Street", "Number"};
 char* inputAddress()
 {
 	char *pAddress[4];
-
 	char* all = (char*)calloc(L_1024, sizeof(char*));
 	if (all) 
 	{
@@ -67,10 +66,8 @@ char* inputAddress()
 				printf("Memory is full. Error assigning more memory.");
 				return NULL;
 			}
-			
 		}
 		replaceSpaceWithAtSign(&all);
-		printf("this is the address being inserted: %s\n", all);
 		return all;
 	}
 	return NULL;
@@ -245,10 +242,9 @@ void capitalizeWordAlternatively(char* *theWord)
 		char* newWord = (char*)calloc(strlen(*theWord), sizeof(char*));
 		if (!newWord) { printError(); return; }
 		char* word = strtok((char *)(*theWord), " ");
-		int sizeOfWord = 0;
 		while (word != NULL)
 		{
-			sizeOfWord = strlen(word);
+			int sizeOfWord = strlen(word);
 			if (sizeOfWord % 2 == 0)
 			{
 				for (int i = 0; i < sizeOfWord; i++)
@@ -300,11 +296,7 @@ char* input()
 		{
 			str[strcspn(str, "\n")] = 0;
 
-			int size = strlen(str);
-			char* newStr = (char *)calloc(size, sizeof(char));
-			strcpy(newStr, str);
-			free(str);
-			return newStr;
+			return str;
 		}
 		*str = '\0';
 	}

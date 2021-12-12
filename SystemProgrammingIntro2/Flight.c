@@ -8,20 +8,33 @@
 const char* airplaneTypes[] = { "Passengers", "Container", "Military" };
 
 Flight* initFlight(AirportManager* pam)
-{
+{	
+	if (pam->numOfAirports < 2)
+	{
+		printf("Cannot add flight when have less than 2 airports!\n");
+		return NULL;
+	}
+
 	Flight* pf = (Flight*)malloc(sizeof(Flight));
 	if (pf)
 	{
-		Airport* pFrom = findAirportFromInput(pam, "Insert the Flight's source: ");
+		printf("Insert the Flight's source: ");
+		Airport* pFrom = findAirportFromInput(pam);
 		if (!pFrom){
 			printf("Airport not exists"); return NULL;
 		}
 		pf->from = *pFrom;
 
-		Airport* pTo = findAirportFromInput(pam, "Insert the Flight's destination: ");
+		printf("Insert the Flight's destination: ");
+		Airport* pTo = findAirportFromInput(pam);
 		if (!pTo){
 			free(pf);printf("Airport not exists"); return NULL;
 		}
+		if (isFlightFromSourceName(pf, pTo->name))
+		{
+			free(pf); printf("Error: Cannot have same origin and destination airport");return NULL;
+		}
+		
 		pf->to = *pTo;
 
 		Airplane* ap = initAirplane(pam);
@@ -96,7 +109,7 @@ char* inputAirplaneCode()
 	int isCapital = 1;
 	for (int i = 0; i < 4; i++)
 	{
-		if (code[i]<'A' && code[i]>'Z')
+		if (code[i]<'A' || code[i]>'Z')
 		{
 			isCapital = 0;
 		}

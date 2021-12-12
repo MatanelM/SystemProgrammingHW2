@@ -7,19 +7,11 @@
 #include "Airline.h"
 #include "Flight.h"
 #include "functionsLib.h"
-
-int f_addFlight(AirportManager* pam, Airline* pai);
-int f_addAirport(AirportManager* pam);
-int f_printAirline(Airline* pai);
-int f_printAirlineManager(AirportManager* pam);
-int f_printNumberOfFlightFromLocation(Airline* pai);
-int f_printFlightsWithAirplaneCode(Airline* pai);
-int f_printFlightsWithAirplaneType(Airline* pai);
-int f_calculateSizes(void);
+#include "menuFunctions.h"
 
 int main(void)
 {
-	int p = 1;
+	char p = 1;
 
 	AirportManager* pam = initAirportManager();
 	if (!pam)
@@ -27,19 +19,19 @@ int main(void)
 		return 1;
 	}
 
-	Airline* pai = initAirline();
-		
-
 	printf("Would you like to add an airport? (1 - Yes)\n");
-	scanf_s("%d", &p);
-	while (p == 1)
+	scanf_s("%c", &p, 1);
+	clearBuffer();
+	while (p == '1')
 	{
-		clearBuffer();
 		f_addAirport(pam);
 		printf("Would you like to add another airport? (1 - Yes, other - No)\n");
-		scanf_s("%d", &p);
+		scanf_s("%c", &p, 1);
+		clearBuffer();
 	}
 	
+	Airline* pai = initAirline();
+
 	char menu[L_1024] = "Please pick one:\n";
 	char* pmenu = menu;
 	strcat(menu, "1. Add flight\n");
@@ -53,30 +45,29 @@ int main(void)
 	strcat(menu, "============================================\n");
 	strcat(menu, "\n");
 
-		
 	printf("\nWelcome, ");
 	do
 	{
 		printf(	"%s", menu);
 
-		scanf_s("%d", &p);
+		scanf_s("%c", &p, 1);
 		clearBuffer();
 		switch (p)
 		{
-		case 1: f_addFlight(pam, pai); break;
-		case 2: f_addAirport(pam);  break;
-		case 3: f_printAirline(pai); break;
-		case 4: f_printAirlineManager(pam);  break;
-		case 5: f_printNumberOfFlightFromLocation(pai); break;
-		case 6: f_printFlightsWithAirplaneCode(pai); break;
-		case 7: f_printFlightsWithAirplaneType(pai); break;
-		case 321: f_calculateSizes(); break;
-		case 8: break;
+		case '1': f_addFlight(pam, pai); break;
+		case '2': f_addAirport(pam);  break;
+		case '3': f_printAirline(pai); break;
+		case '4': f_printAirlineManager(pam);  break;
+		case '5': f_printNumberOfFlightFromLocation(pai); break;
+		case '6': f_printFlightsWithAirplaneCode(pai); break;
+		case '7': f_printFlightsWithAirplaneType(pai); break;
+		case '9': f_calculateSizes(); break;
+		case '8': break;
 		default: printf("Pick a number between 1-8!\n\n"); break;
 		}
 		printf("\n");
 		// clearBuffer(); // when returning from function - promising the empty buffer
-	} while (p != 8);
+	} while (p != '8');
 	printf("Goodbye\n");
 
 	return 0;

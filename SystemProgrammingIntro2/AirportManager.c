@@ -53,9 +53,9 @@ int addAirport(AirportManager* pam, Airport* pai)
 	return 1;
 }
 
-Airport* findAirportFromInput(const AirportManager *pam, const char* message)
+Airport* findAirportFromInput(const AirportManager *pam)
 {
-	char* name = inputWithMessage(message);
+	char* name = input();
 	if (!name)
 	{
 		printError(); return NULL;
@@ -67,13 +67,10 @@ Airport* findAirportFromInput(const AirportManager *pam, const char* message)
 
 Airport* findAirportByName(const AirportManager *pam, const char name[])
 {
-
-	
-
 	int max = pam->numOfAirports;
 	for (int i = 0; i < max; i++)
 	{
-		Airport* a1 = &(pam->airports[i]);
+		Airport* a1 = &((pam->airports)[i]);
 		if (isAirportName(a1, name))
 		{
 			return a1;
